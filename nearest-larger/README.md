@@ -15,5 +15,5 @@ Given [13, 7, 5, 9, 4, 3, 20, 50, 1] and index 7, you should return -1.
 
 <br/>
 
-## Follow-up
+## Bonus
 If you can preprocess the array, can you do this in constant time?

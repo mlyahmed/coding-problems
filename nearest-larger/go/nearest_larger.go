@@ -1,30 +1,30 @@
-package nearestLarger
+package nearestlarger
 
-func NearestLarger(input []int, element int) int {
-  if element >= len(input) {
-    return -1
-  }
+// NearestLarger returns the index of the nearest larger number of the number at index i.
+// Time Complexity : O(n), n = len(elements).
+func NearestLarger(elements []int, i int) int {
+	if i >= len(elements) {
+		return -1
+	}
 
-  x := 1
-  xnext, xprevious := true, true
-  for ; xnext || xprevious; x++  {
+	for x, xnext, xprevious := 1, true, true; xnext || xprevious; x++ {
 
-    xnext, xprevious = element + x < len(input), element - x >= 0
-    nearest := element
-    
-    if xnext && input[element + x] > input[nearest] {
-      nearest = element + x
-    }
+		nearest := i
+		xnext, xprevious = (i+x < len(elements)), (i-x >= 0)
 
-    if xprevious && input[element - x] > input[nearest] {
-      nearest = element -x
-    }
+		if xnext && elements[i+x] > elements[nearest] {
+			nearest = i + x
+		}
 
-    if nearest != element {
-      return nearest
-    }
+		if xprevious && elements[i-x] > elements[nearest] {
+			nearest = i - x
+		}
 
-  }
+		if nearest != i {
+			return nearest
+		}
 
-  return -1
+	}
+
+	return -1
 }
