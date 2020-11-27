@@ -4,5 +4,5 @@ Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the nu
 
 You can assume that the messages are decodable. For example, '001' is not allowed.
 
-##Examples
+## Examples
 Given the message '111' you should return 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
